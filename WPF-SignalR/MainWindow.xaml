@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPF_SignalR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_SignalR"
+        mc:Ignorable="d"
+        Title="WPF-SignalR" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock x:Name="txtUser" Width="180" Text="User:" VerticalAlignment="Center" Margin="20 0"/>
+            <Button x:Name="btnConnect" Content="Connect" Height="30" Click="btnConnect_Click"/>
+            <Button x:Name="btnDisConnect" Content="DisConnect" Height="30" Margin="20 0" IsEnabled="False" Click="btnDisConnect_Click"/>
+        </StackPanel>
+
+        <DockPanel Grid.Row="1">
+            <RichTextBox x:Name="rtxMessage" Height="Auto" Width="Auto" Margin="20"/>
+        </DockPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBox x:Name="txtSendMsg" Width="200" Margin="10"/>
+            <Button x:Name="btnSendMsg" Height="30" Content="Send !" IsEnabled="False" Click="btnSendMsg_Click" Margin="10 0"/>
+            <Button x:Name="btnSendToSystem" Height="30" Content="Send Sys !" IsEnabled="False" Click="btnSendToSystem_Click" Margin="10 0"/>
+            <Button x:Name="btnSendToGroup" Height="30" Content="Send Grp!" IsEnabled="False" Click="btnSendToGroup_Click" Margin="10 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
